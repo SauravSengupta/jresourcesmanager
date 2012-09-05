@@ -4,8 +4,10 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
+import com.badlogic.gdx.utils.Logger;
 
 /**
  * Provides a way to access data located in the application classpath.
@@ -15,7 +17,8 @@ import org.slf4j.LoggerFactory;
  */
 public class ClassPathDataSource implements DataSource {
 
-	protected static final Logger logger = LoggerFactory.getLogger(ClassPathDataSource.class);
+	//protected static final Logger logger = LoggerFactory.getLogger(ClassPathDataSource.class);
+	protected static final Logger logger = new Logger(ClassPathDataSource.class.getSimpleName());
 
 	private final String path;
 
@@ -34,7 +37,8 @@ public class ClassPathDataSource implements DataSource {
 	}
 
 	public InputStream getInputStream() {
-		if (logger.isInfoEnabled())
+		//if (logger.isInfoEnabled())
+		if (logger.getLevel() >= Logger.INFO)
 			logger.info("loading from thread stream " + getResourceName());
 		return classLoader.getResourceAsStream(path);
 	}

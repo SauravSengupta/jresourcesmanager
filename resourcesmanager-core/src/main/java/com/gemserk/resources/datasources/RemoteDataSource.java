@@ -7,8 +7,10 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
+import com.badlogic.gdx.utils.Logger;
 
 /**
  * Provides a way to access data located on a remote storage by using a URL.
@@ -18,7 +20,8 @@ import org.slf4j.LoggerFactory;
  */
 public class RemoteDataSource implements DataSource {
 
-	protected static final Logger logger = LoggerFactory.getLogger(RemoteDataSource.class);
+	//protected static final Logger logger = LoggerFactory.getLogger(ClassPathDataSource.class);
+	protected static final Logger logger = new Logger(ClassPathDataSource.class.getSimpleName());
 
 	private final String path;
 
@@ -31,7 +34,8 @@ public class RemoteDataSource implements DataSource {
 
 	public InputStream getInputStream() {
 		try {
-			if (logger.isInfoEnabled())
+			//if (logger.isInfoEnabled())
+			if (logger.getLevel() >= Logger.INFO)
 				logger.info("loading stream from " + getResourceName());
 			return new URL(path).openStream();
 		} catch (MalformedURLException e) {

@@ -3,8 +3,10 @@ package com.gemserk.resources.datasources;
 import java.io.InputStream;
 import java.net.URI;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+
+import com.badlogic.gdx.utils.Logger;
 
 /**
  * Generic implementation of DataSource interface which uses directly an InputStream.
@@ -14,7 +16,8 @@ import org.slf4j.LoggerFactory;
  */
 public class GenericDataSource implements DataSource {
 
-	protected static final Logger logger = LoggerFactory.getLogger(GenericDataSource.class);
+	//protected static final Logger logger = LoggerFactory.getLogger(ClassPathDataSource.class);
+	protected static final Logger logger = new Logger(ClassPathDataSource.class.getSimpleName());
 
 	private final InputStream inputStream;
 
@@ -37,7 +40,8 @@ public class GenericDataSource implements DataSource {
 
 	@Override
 	public InputStream getInputStream() {
-		if (logger.isInfoEnabled())
+		//if (logger.isInfoEnabled())
+		if (logger.getLevel() >= Logger.INFO)
 			logger.info("returning static input stream " + getResourceName());
 		return inputStream;
 	}
