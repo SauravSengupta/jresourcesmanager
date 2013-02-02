@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="resourcesmanager-core/src/main/java"/>
-	<classpathentry kind="src" path="resourcesmanager-core/src/test/java"/>
-	<classpathentry kind="src" path="resourcesmanager-java2dmodule/src/main/java"/>
-	<classpathentry kind="src" path="resourcesmanager-tests/src/main/java"/>
+	<classpathentry excluding="com/gemserk/resources/datasources/RemoteDataSource.java|com/gemserk/resources/datasources/GenericDataSource.java|com/gemserk/resources/datasources/|com/gemserk/resources/dataloaders/PropertiesDataLoader.java|com/gemserk/resources/monitor/FilesMonitor.java|com/gemserk/resources/monitor/FilesMonitorImpl.java|com/gemserk/resources/monitor/FilesMonitorNullImpl.java|com/gemserk/resources/monitor/FileUtils.java|com/gemserk/resources/monitor/FileMonitor.java|com/gemserk/resources/monitor/FileMonitorAction.java|com/gemserk/resources/monitor/FileMonitorResourceHelper.java|com/gemserk/resources/monitor/FileMonitorResourceHelperImpl.java|com/gemserk/resources/monitor/FileMonitorResourceHelperNullImpl.java|com/gemserk/resources/monitor/handlers/" kind="src" path="resourcesmanager-core/src/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
